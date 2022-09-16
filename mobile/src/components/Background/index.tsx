@@ -1,0 +1,24 @@
+import { ReactNode } from 'react';
+import { ImageBackground } from 'react-native';
+import { THEME } from '../../theme';
+
+import backgroundImage from "../../assets/background-galaxy.png"
+
+import { styles } from './styles';
+
+interface IBackground {
+    children: ReactNode
+}
+
+
+export function Background({children}: IBackground) {
+  return (
+    <ImageBackground
+      source={backgroundImage}
+      defaultSource={backgroundImage}
+      style={styles.container}
+    >
+        {children}
+    </ImageBackground>
+  );
+}
